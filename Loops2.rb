@@ -104,9 +104,20 @@ end
 
 def max_span(list)
     i = 0
+    max = 0
+    answer = []
     list.size.times do
-        
+        k = i
+        ((list.size-1)-i).times do 
+            if list[i] == list[k] && k-i>max
+                puts max = k-i
+                puts list[k]
+            end
+            k = k + 1
+        end
+        i = i + 1
     end
+    return max
 end
 
-# Comment from home
+print max_span([3,1,3,0,0,1])
